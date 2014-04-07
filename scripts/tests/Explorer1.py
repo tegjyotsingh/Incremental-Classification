@@ -7,11 +7,13 @@ Desc: Initial test scripts for data exploration
 
 #reading csvfile to array
 import numpy as np
-filename ='../../dataset/sea_dataset/sea.csv'
+filename ='../../dataset/sea_dataset/normalized_sea.csv'
 data=np.recfromcsv(filename)
 print len(data)
 print data.dtype
-#data_list=data.tolist()
+data_tuplelist=data.tolist()
+data_list=[list(i) for i in data_tuplelist]
+
 
 #visualizing
 temp_x=np.vstack((data['x2'],data['x3']))

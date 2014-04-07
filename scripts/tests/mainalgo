@@ -1,0 +1,36 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Apr  6 16:17:11 2014
+Desc:Main algorithm
+@author: tegjyot
+"""
+import numpy as np
+def compute_chunk_n(data,nop,sigmai,old_param,old_index):
+    
+    batch_size=len(data)
+    #number of dimensions
+    nod=len(sigmai)
+    accuracy_particle=no.zeros(shape=(nop,1))
+    current_parameters=np.zeros(shape=(nop,nod))
+    
+    
+    for i in range(0,m):
+        for j in range(0,nod):
+            current_parameters[i,j]=np.random.normal(loc=old_index[i,j],scale=sigmai(j))
+        
+        accuracy_particle(i)=compute_accuracy(data,current_paramters[i,:])
+
+
+def compute_accuracy(data,current_paramters):
+    return 1    
+
+def main():
+    import numpy as np
+    filename ='../../dataset/sea_dataset/sea.csv'
+    data=np.recfromcsv(filename)
+    print len(data)
+    print data.dtype
+
+if __name__ == "__main__":
+    main()
+    
