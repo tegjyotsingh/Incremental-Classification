@@ -1,5 +1,0 @@
-SEA Concepts
-(SEA Concepts Dataset) 
-Dataset (proposed by Street and Kim, 2001) with 60,000 examples, 3 attributes and 3 classes. Attributes are numeric between 0 and 10, only two are relevant. There are four concepts, 15,000 examples each, with different thresholds for the concept function, which is if relevant_feature1 + relevant_feature2 > Threshold then class = 0. Threshold values are 8,9,7, and 9.5. Dataset has about 10 % of noise.
-
-

@@ -58,7 +58,7 @@ def compute_accuracy(data,current_paramters):
         class_label=i[-1]
         x=i[:-1]
         y=compute_logit(x,current_paramters)
-        if (y>0.5 and class_label==0) or (y<=0.5 and class_label==1):
+        if (y>=0.5 and class_label==0) or (y<0.5 and class_label==1):
             accuracy=accuracy+1
     return float(accuracy)/B
     
@@ -105,16 +105,14 @@ def main():
     
 def plot_accuracy(chunk_accuracy_list):
         avg_chunk_accuracy=[]
-        n=10
+        n=20
         sum1=0
         for i in range(1,len(chunk_accuracy_list)):
+            sum1=sum1+chunk_accuracy_list[i-1]
             if mod(i,n)==0:
                 avg_chunk_accuracy.append(sum1/n)
                 sum1=0
-            else:
-                sum1=sum1+chunk_accuracy_list[i]
-            
-        
+
         x=range(1,len(avg_chunk_accuracy)+1)
         #x=range(1,len(chunk_accuracy_list)+1,1000)
         mp.pyplot.plot(x,avg_chunk_accuracy)
